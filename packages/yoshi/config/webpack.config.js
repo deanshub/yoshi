@@ -567,6 +567,10 @@ function createClientWebpackConfig({
   isDebug = true,
   isHmr,
   withLocalSourceMaps,
+  cdn: {
+    port = 4200,
+    https = false,
+  } = {},
 } = {}) {
   const config = createCommonWebpackConfig({
     isDebug,
@@ -783,7 +787,7 @@ function createClientWebpackConfig({
   if (isHmr) {
     addEntry(clientConfig, [
       require.resolve('webpack/hot/dev-server'),
-      require.resolve('webpack-dev-server/client'),
+      `${require.resolve('webpack-dev-server/client')}?${https?'https':'http'}://localhost:${port}`,
     ]);
   }
 
