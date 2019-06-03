@@ -784,7 +784,9 @@ function createClientWebpackConfig({
   if (isHmr) {
     addEntry(clientConfig, [
       require.resolve('webpack/hot/dev-server'),
-      `${require.resolve('webpack-dev-server/client')}?${https?'https':'http'}://localhost:${port}`,
+      `${require.resolve('webpack-dev-server/client')}?${
+        https ? 'https' : 'http'
+      }://localhost:${port}`,
     ]);
   }
 
