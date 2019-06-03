@@ -88,7 +88,7 @@ module.exports = async () => {
     cdn: {
       port: project.servers.cdn.port,
       https: project.servers.cdn.ssl,
-    }
+    },
   });
 
   const serverConfig = createServerWebpackConfig({
