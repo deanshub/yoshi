@@ -567,7 +567,7 @@ function createClientWebpackConfig({
   isDebug = true,
   isHmr,
   withLocalSourceMaps,
-  cdn: { port = 4200, https = false } = {},
+  cdn: { port = 3200, https = false } = {},
 } = {}) {
   const config = createCommonWebpackConfig({
     isDebug,
