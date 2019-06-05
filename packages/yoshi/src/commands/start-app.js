@@ -85,10 +85,6 @@ module.exports = async () => {
     isDebug: true,
     isAnalyze: false,
     isHmr: project.hmr,
-    cdn: {
-      port: project.servers.cdn.port,
-      https: project.servers.cdn.ssl,
-    },
   });
 
   const serverConfig = createServerWebpackConfig({
